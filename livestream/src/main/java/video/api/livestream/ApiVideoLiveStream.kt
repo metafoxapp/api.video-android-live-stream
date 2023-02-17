@@ -148,6 +148,14 @@ constructor(
         initialOnConnectionListener = connectionListener
     )
 
+    var isFlashMode : Boolean
+     get() {
+         return streamer.settings.camera.flash.enable
+     }
+    set(value: Boolean) {
+        streamer.settings.camera.flash.enable = value
+    }
+
     /**
      * Get/set video bitrate during a streaming in bps.
      * Value will be reset to provided [VideoConfig.startBitrate] for a new stream.
